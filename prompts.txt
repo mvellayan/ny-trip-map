@@ -1,0 +1,22 @@
+Prompt 1:
+
+please look at this data data/fsd-start-stop.cvs file.
+It contains trip data from Washington dc to New York city.
+Each row represents the start and stop of tesla full service drive.
+This includes the start time, lat and long along with stop time, lat and long.
+
+i'd like a python program that will upload all this to google map via their api and draw me a graphic of the route that had the gps turned on.
+I'd like the line to be think and in blue the start and stop to be big red dots.
+Can you for the segments, that are longer than 5 mile with black color letter showing he distance and duration
+
+-------------------------
+Prompt 2:
+can you move the label boxes further away from the line?
+
+-------------------------
+Prompt 3:
+Perfect. can you add readme.md?
+
+-------------------------
+
+
