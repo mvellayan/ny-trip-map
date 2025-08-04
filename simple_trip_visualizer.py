@@ -59,7 +59,7 @@ def create_trip_map():
         
         # Labels for segments > 5 miles
         distance_miles = geodesic(start_coords, stop_coords).miles
-        if distance_miles > 3:
+        if distance_miles > 5:
             duration_mins = calculate_duration(row['start_time'], row['stop_time'])
             # Alternate label positions to avoid overlap
             lat_offset = 0.03 if idx % 2 == 0 else -0.03
@@ -67,10 +67,10 @@ def create_trip_map():
             mid_lat = (start_coords[0] + stop_coords[0]) / 2 + lat_offset
             mid_lng = (start_coords[1] + stop_coords[1]) / 2 + lng_offset
             
-            folium.Marker(
-                location=[mid_lat, mid_lng],
-                icon=folium.DivIcon(html=f'<div style="background:white;color:black;padding:8px 10px;border:1px solid black;border-radius:5px;font-size:20px;font-weight:bold;min-width:120px;text-align:center;">{duration_mins}min</div>')
-            ).add_to(m)
+            # folium.Marker(
+            #     location=[mid_lat, mid_lng],
+            #     icon=folium.DivIcon(html=f'<div style="background:white;color:black;padding:8px 10px;border:1px solid black;border-radius:5px;font-size:14px;font-weight:bold;min-width:120px;text-align:center;">{distance_miles:.0f}mi {duration_mins}min</div>')
+            # ).add_to(m)
     
     m.save('trip_map.html')
     print("Map saved as trip_map.html")
